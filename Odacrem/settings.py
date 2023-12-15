@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-xi5ym=-97cc9lnrc(o*qd)mq&52jef)14cypk!gz$@4e7va83p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -90,11 +90,11 @@ WSGI_APPLICATION = 'Odacrem.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'odacremDB',
-        'USER':'odacrem',
-        'PASSWORD':'123456', #Contraseña local para la base de datos
-        'HOST':'127.0.0.1',
-        'DATABASE_PORT':'5432',
+        'NAME': 'railway',
+        'USER':'postgres',
+        'PASSWORD':'*16bA6F2bA3-fe5BFGFdc*3G2g3ABD5g', #Contraseña local para la base de datos
+        'HOST':'roundhouse.proxy.rlwy.net',
+        'DATABASE_PORT':'56670',
     }
 }
 
