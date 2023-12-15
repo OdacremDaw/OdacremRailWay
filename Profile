@@ -1,1 +1,2 @@
 web: gunicorn Odacrem.wsgi --log-file -
+start: python manage.py runserver
