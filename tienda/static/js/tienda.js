@@ -12,7 +12,7 @@ const Orden = {
 }
 
 //Constante que guardara la direccion raiz del servidor para hacer las peticiones
-const urlServidor = "http://127.0.0.1:8000";
+const urlServidor = "https://odacremrailway-production.up.railway.app";
 
 //variable global que guarda el carrito de la tienda
 var carrito
@@ -230,6 +230,7 @@ function ordenaProductos(productos) {
 function peticionProductos(filtrado) {
   //Mostramos el loader
   $('.loader').show();
+  $("#pagination").hide()
   //Ponemos la url correcta dependiendo de los filtros
   let url = urlServidor + '/tienda/productos';
   if (filtrado != undefined) {
@@ -243,6 +244,7 @@ function peticionProductos(filtrado) {
     type: 'GET',
     //Que haremos si la peticion es correcta
     success: function (response) {
+      $("#pagination").show()
       //Se guardan los productos ordenados
       productos = ordenaProductos(response["productos"])
       //Cargamos los productos de la primera pagina
@@ -266,7 +268,8 @@ function peticionProductos(filtrado) {
       document.getElementById("contenedorProductos").append(div);
       //Reiniciamos la paginación a 0 para que desaparezca
       reiniciaPaginacion(0);
-    }
+    },
+    timeout: 10000
   });
 }
 
