@@ -11,7 +11,7 @@ var carrito
 var precioTotal = 0;
 
 //Constante que guardara la direccion raiz del servidor para hacer las peticiones
-const urlServidor = "http://127.0.0.1:8000";
+const urlServidor = "https://odacremrailway-production.up.railway.app/";
 
 $(document).ready(function () {
   //Recuperamos el carrito
