@@ -11,10 +11,13 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+DATABASE_URL="postgresql://postgres:*16bA6F2bA3-fe5BFGFdc*3G2g3ABD5g@roundhouse.proxy.rlwy.net:56670/railway"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -25,7 +28,7 @@ SECRET_KEY = 'django-insecure-xi5ym=-97cc9lnrc(o*qd)mq&52jef)14cypk!gz$@4e7va83p
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -88,14 +91,7 @@ WSGI_APPLICATION = 'Odacrem.wsgi.application'
 # Conexión a PostgreSQL
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'railway',
-        'USER':'postgres',
-        'PASSWORD':'*16bA6F2bA3-fe5BFGFdc*3G2g3ABD5g', #Contraseña local para la base de datos
-        'HOST':'roundhouse.proxy.rlwy.net',
-        'DATABASE_PORT':'56670',
-    }
+    'default': dj_database_url.config(default=DATABASE_URL,conn_max_age=1800)
 }
 
 
@@ -134,6 +130,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
 
 
 #Indicamos a Django que las imagenes se guardan en esta carpeta

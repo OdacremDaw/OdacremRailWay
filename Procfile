@@ -1,0 +1,1 @@
+web: gunicorn Odacrem.wsgi --log-file -
