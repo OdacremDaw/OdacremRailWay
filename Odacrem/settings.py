@@ -66,6 +66,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://odacremrailway-production.up.railway.app'
+]
+
 ROOT_URLCONF = 'Odacrem.urls'
 
 TEMPLATES = [
