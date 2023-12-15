@@ -230,6 +230,7 @@ function ordenaProductos(productos) {
 function peticionProductos(filtrado) {
   //Mostramos el loader
   $('.loader').show();
+  $("#pagination").hide()
   //Ponemos la url correcta dependiendo de los filtros
   let url = urlServidor + '/tienda/productos';
   if (filtrado != undefined) {
@@ -243,6 +244,7 @@ function peticionProductos(filtrado) {
     type: 'GET',
     //Que haremos si la peticion es correcta
     success: function (response) {
+      $("#pagination").show()
       //Se guardan los productos ordenados
       productos = ordenaProductos(response["productos"])
       //Cargamos los productos de la primera pagina
