@@ -12,7 +12,7 @@ const Orden = {
 }
 
 //Constante que guardara la direccion raiz del servidor para hacer las peticiones
-const urlServidor = "https://odacremrailway-production.up.railway.app/";
+const urlServidor = "https://odacremrailway-production.up.railway.app";
 
 //variable global que guarda el carrito de la tienda
 var carrito
@@ -255,6 +255,7 @@ function peticionProductos(filtrado) {
     //Que haremos en caso de error
     error: function () {
       console.error("No ha sido posible realizar la petición");
+      $('.producto').remove();
       //Ocultamos el loader
       $('.loader').hide();
       //Añadimos un mensaje de error indicando al usuario lo que ha ocurrido

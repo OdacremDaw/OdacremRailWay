@@ -7,7 +7,7 @@ import { actualizaNumCarrito } from './base.js';
 //Variable global que guarda el carrito de la tienda
 var carrito
 //Constante que guardara la direccion raiz del servidor para hacer las peticiones
-const urlServidor = "https://odacremrailway-production.up.railway.app/";
+const urlServidor = "https://odacremrailway-production.up.railway.app";
 
 $(document).ready(function () {
     if (sessionStorage.getItem("carrito")) {
