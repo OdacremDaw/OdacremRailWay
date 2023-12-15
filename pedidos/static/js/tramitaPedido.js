@@ -7,7 +7,7 @@ import { actualizaNumCarrito } from './base.js';
 //Variable global que guarda el carrito de la tienda
 var carrito
 //Constante que guardara la direccion raiz del servidor para hacer las peticiones
-const urlServidor = "http://127.0.0.1:8000";
+const urlServidor = "https://odacremrailway-production.up.railway.app/";
 
 $(document).ready(function () {
     if (sessionStorage.getItem("carrito")) {
@@ -164,6 +164,7 @@ function hacerPeticionPedido(nombreCalle,numPuerta,codigoPostal,provincia,ciudad
       //Que haremos en caso de error
       error: function () {
         console.error("No ha sido posible realizar el pedido correctamente");
-      }
+      },
+      timeout: 10000
     });
   }

@@ -164,6 +164,7 @@ function hacerPeticionPedido(nombreCalle,numPuerta,codigoPostal,provincia,ciudad
       //Que haremos en caso de error
       error: function () {
         console.error("No ha sido posible realizar el pedido correctamente");
-      }
+      },
+      timeout: 10000
     });
   }

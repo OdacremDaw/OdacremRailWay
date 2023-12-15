@@ -266,7 +266,8 @@ function peticionProductos(filtrado) {
       document.getElementById("contenedorProductos").append(div);
       //Reiniciamos la paginación a 0 para que desaparezca
       reiniciaPaginacion(0);
-    }
+    },
+    timeout: 10000
   });
 }
 

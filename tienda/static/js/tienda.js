@@ -12,7 +12,7 @@ const Orden = {
 }
 
 //Constante que guardara la direccion raiz del servidor para hacer las peticiones
-const urlServidor = "http://127.0.0.1:8000";
+const urlServidor = "https://odacremrailway-production.up.railway.app/";
 
 //variable global que guarda el carrito de la tienda
 var carrito
@@ -266,7 +266,8 @@ function peticionProductos(filtrado) {
       document.getElementById("contenedorProductos").append(div);
       //Reiniciamos la paginación a 0 para que desaparezca
       reiniciaPaginacion(0);
-    }
+    },
+    timeout: 10000
   });
 }
 

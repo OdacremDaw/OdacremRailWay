@@ -279,7 +279,8 @@ function cargaProducto(id, cantidad, talla) {
       </li>`
       div.innerHTML = htmlProducto;
       document.getElementById("contenedorProductos").append(div);
-    }
+    },
+    timeout: 10000
   });
 }
 
