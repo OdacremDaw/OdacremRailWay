@@ -26,7 +26,7 @@ DATABASE_URL="postgresql://postgres:*16bA6F2bA3-fe5BFGFdc*3G2g3ABD5g@roundhouse.
 SECRET_KEY = 'django-insecure-xi5ym=-97cc9lnrc(o*qd)mq&52jef)14cypk!gz$@4e7va83p'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -130,9 +130,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
-
 
 #Indicamos a Django que las imagenes se guardan en esta carpeta
 MEDIA_URL='/media/'
