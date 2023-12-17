@@ -230,6 +230,8 @@ function ordenaProductos(productos) {
 function peticionProductos(filtrado) {
   //Mostramos el loader
   $('.loader').show();
+  //Borramos todos los productos anteriores
+  $('.producto').remove();
   $("#pagination").hide()
   //Ponemos la url correcta dependiendo de los filtros
   let url = urlServidor + '/tienda/productos';
@@ -277,8 +279,6 @@ function peticionProductos(filtrado) {
 
 //Función encargada de cargar todos los productos pasados
 function cargarProductos(productosElegidos) {
-  //Borramos todos los productos anteriores
-  $('.producto').remove();
   //Miramos si hemos obtenido productos
   if (productosElegidos.length == 0) {
     //Mostramos un mensaje indicando que no se disponen de articulos
