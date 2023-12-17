@@ -131,6 +131,8 @@ $(document).ready(
 
     //Ordenacion de los productos cuando se cambia el desplegable
     $('#orden').on('change', function () {
+      //Borramos todos los productos anteriores
+      $('.producto').remove();
       //Reiniciamos la paginacion
       reiniciaPaginacion(productos.length);
       //Ordenamos los productos
